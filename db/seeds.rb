@@ -1,10 +1,7 @@
 10.times do |blog|
 Blog.create!(
 	title: "My Blog Post #{blog}",
-	body: "My Name Is Cleveland Brown
-		And I Am Proud To Be
-		Right Back In My Home Town
-		With My New Family
+	body: "My Name Is Cleveland Brown And I Am Proud To Be Right Back In My Home Town With My New Family
 		There's Old Friends & New Friends & Even a Bear
 		Through Good Times & Bad Times
 		Its True Love To Share
