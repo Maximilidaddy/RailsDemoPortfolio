@@ -11,5 +11,9 @@
 <p><%= portfolio_item.body %></p>
 <%= image_tag portfolio_item.main_image if !portfolio_item.main_image.nil? %>
 <%= link_to "Edit",edit_portfolio_path(portfolio_item)%>
+
+#Will Send User to Destroy Action
+#having method: : delete will redirect path to the destroy Action, if it werent there it would direct to show method
+<%= link_to 'Destroy Portfolio Item', portfolio_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } %> 
 <%  end %>
 
