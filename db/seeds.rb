@@ -39,7 +39,8 @@ puts "5 skills created"
 				My Happy Mustache Face
 				This Is The Cleveland Show!",
 
-			main_image: "https://via.placeholder.com/150x350/O%20https://placeholder.com/",
+			main_image: "https://via.placeholder.com/650x400/O%20https://placeholder.com/",
+			thumb_image: "https://via.placeholder.com/350x200/O%20https://placeholder.com/"
 		)
 end
 	puts "9 portfolios created"

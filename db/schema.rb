@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_06_110210) do
+ActiveRecord::Schema.define(version: 2023_01_06_203318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2023_01_06_110210) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.integer "status", default: 0
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
   end
 
@@ -42,7 +43,7 @@ ActiveRecord::Schema.define(version: 2023_01_06_110210) do
     t.text "main_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "thumb_image"
+    t.text "thumb_image"
   end
 
   create_table "skills", force: :cascade do |t|
