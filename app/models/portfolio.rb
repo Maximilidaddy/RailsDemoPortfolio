@@ -1,4 +1,6 @@
 class Portfolio < ApplicationRecord
+	has_many :technologies
+	
 	include Placeholder #calls module Placeholder and allows its methods to be used 
 
 	#data validation --> requires these elements to be added when creating new portfolio
