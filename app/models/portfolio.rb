@@ -1,8 +1,14 @@
 class Portfolio < ApplicationRecord
+	#allows for nesting of technologies
 	has_many :technologies
-	
-	include Placeholder #calls module Placeholder and allows its methods to be used 
 
+	# allows for parent class to save several attributes of the nested attributes 
+	accepts_nested_attributes_for :technologies,#lower code essentially says do not accept if attrs is blank 
+									reject_if: lambda{|attrs|attrs['name'].blank?}
+	
+	#calls module Placeholder and allows its methods to be used 
+	include Placeholder 
+	
 	#data validation --> requires these elements to be added when creating new portfolio
 	validates_presence_of :title, :body, :main_image, :thumb_image
 
@@ -12,7 +18,7 @@ class Portfolio < ApplicationRecord
 	end
 
 	#created custom scope
-	#scope :ruby_on_rails_portfolio_items, -> (where(subtitle: 'Ruby on Rails'))
+	scope :ruby_on_rails_portfolio_items, -> {where(subtitle: 'Ruby on Rails')}
 
 	#setting defaults for portfolio
 	after_initialize :set_defaults
