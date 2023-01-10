@@ -2,11 +2,20 @@ class PortfoliosController < ApplicationController
 	def index
 		@portfolio_items= Portfolio.all
 	end
-	def new
+
+  #pulls only portfolios with angular as subtitle
+  def angular
+    @angular_portfolio_items=Portfolio.angular
+  end
+	
+  #creates new portfolio and calls new.ntml.erb file
+  def new
 		@portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
+    #instantiaties 3 versions of the item
 	end
-	def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+	def create #below a whitelist is created
+    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
 
     respond_to do |format|
       if @portfolio_item.save
@@ -17,11 +26,12 @@ class PortfoliosController < ApplicationController
         format.json { render json: @portfolio_item.errors, status: :unprocessable_entity }
       end
     end
-  	end
+  end
+
   	def edit
   		@portfolio_item=Portfolio.find(params[:id])
   	end
-  	def update
+  def update
   	@portfolio_item=Portfolio.find(params[:id])
   	
     respond_to do |format|
