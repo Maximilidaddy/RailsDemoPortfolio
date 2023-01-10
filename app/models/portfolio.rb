@@ -3,9 +3,9 @@ class Portfolio < ApplicationRecord
 	has_many :technologies
 
 	# allows for parent class to save several attributes of the nested attributes 
-	accepts_nested_attributes_for :technologies,#lower code essentially says do not accept if attrs is blank 
-									reject_if: lambda{|attrs|attrs['name'].blank?}
-	
+	accepts_nested_attributes_for :technologies, reject_if: lambda {|attrs|attrs['name'].blank? }
+	#lower code essentially says do not accept if attrs is blank 
+
 	#calls module Placeholder and allows its methods to be used 
 	include Placeholder 
 	
