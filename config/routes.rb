@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up:'register'}
   resources :portfolios, except: [:show]
+  
     #changing the route to ex: 'portfolio/5' -----> as: changes the prefix of the route in rake routes, change can be found in index file
-    
     get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
     get 'angular-items', to: 'portfolios#angular'
   #changing route to just about and contact
