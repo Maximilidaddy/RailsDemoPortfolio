@@ -29,5 +29,8 @@ module RailsDemoPortfolio
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    #will override defaults but fairly unsafe as it doesnt white list anything 
+   ## config.action_controller.permit_all_parameters = true
   end
 end
