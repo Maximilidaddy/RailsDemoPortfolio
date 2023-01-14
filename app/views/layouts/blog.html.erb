@@ -32,11 +32,13 @@
     <! code from any other page or file will slide into the yield method, allowing it to appear alongside the code being used on the entire application, it dynamically slides in code-->
     <%= yield %>
 
+    <%= render "shared/nav", location: 'bottom' %>
+    
     <% if session[:source]%>
    <p>Thanks for visiting me from <%= session[:source] %></p> 
     <% end %>
 
-    <%=render "shared/nav" %>
+   
 
   </body>
 </html>
