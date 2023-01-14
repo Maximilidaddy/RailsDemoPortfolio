@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
+  #extends and implements specific layout page called portfolio.html.erb
   layout "portfolio"
+
 	def index
 		@portfolio_items= Portfolio.all
 	end

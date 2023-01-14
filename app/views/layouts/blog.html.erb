@@ -36,13 +36,7 @@
    <p>Thanks for visiting me from <%= session[:source] %></p> 
     <% end %>
 
-    <div> <!application layout page allows us to only use this code on page but let the links appear on every page-->
-      <div><%= link_to "Home", root_path %></div>
-      <div><%= link_to "About", about_path %></div>
-      <div><%= link_to "Contact", contact_path %></div>
-       <div><%= link_to "Blogs", blogs_path %></div>
-        <div><%= link_to "Portfolio", portfolios_path %></div>
-    </div>
+    <%=render "shared/nav" %>
 
   </body>
 </html>
