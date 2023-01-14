@@ -17,17 +17,9 @@
 
     <%= render "shared/nav", location: 'top' %>
 
-    <!showing user and login info-->
-    <% if current_user.is_a?(User)%>
-   
-    <!changing route to Logout rather than sign out-->
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-
-    <% else%>
-     <%= link_to "Register", new_user_registration_path%>
-      <%= link_to "Login", new_user_session_path%>
-    <% end%>
-
+    
+    <%= login_helper%>
+    
     <! code from any other page or file will slide into the yield method, allowing it to appear alongside the code being used on the entire application, it dynamically slides in code-->
     <%= yield %>
 
