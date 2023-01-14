@@ -6,7 +6,7 @@
 
 <p><%= portfolio_item.body %></p>
 
-<%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil? %>
+<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
 
 <%= link_to "Edit",edit_portfolio_path(portfolio_item)%>
 
