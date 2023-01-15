@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 	include CurrentUserConcern
 	include DefaultPageContent #creates title and search engine optimization keywords
 	
-
+	
 end
 
 
