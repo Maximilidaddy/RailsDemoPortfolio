@@ -8,8 +8,10 @@
     <!search engine optimization-->
     <META name="keywords" content="<%=@seo_keywords%>" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
   <body>
     <p class="notice"><%= notice %></p>
@@ -20,6 +22,8 @@
     <%= login_helper%>
     <! code from any other page or file will slide into the yield method, allowing it to appear alongside the code being used on the entire application, it dynamically slides in code-->
     <%= yield %>
+
+    <%= copyright_generator %>
 
     <% if session[:source]%>
    <p>Thanks for visiting me from <%= session[:source] %></p> 
