@@ -7,11 +7,13 @@
 
     <!search engine optimization-->
     <META name="keywords" content="<%=@seo_keywords%>" />
-
-
-   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <! see stylesheets folder as this is what the 'blogs' link refers to-->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+  </head>
+
+
+
   </head>
   <body>
     <p class="notice"><%= notice %></p>

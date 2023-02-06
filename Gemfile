@@ -56,7 +56,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'friendly_id', '~> 5.4.0'
-<<<<<<< HEAD
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
@@ -67,7 +66,4 @@ gem 'jquery-rails'
 gem 'devcamp_view_tool', git: 'https://github.com/Maximilidaddy/devcamp_view_tool'
 
 gem 'petergate', '~> 3.0'
-=======
-gem 'devise', '~> 4.8', '>= 4.8.1'
 
->>>>>>> authentication

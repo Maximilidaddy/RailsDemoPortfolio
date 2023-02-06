@@ -4,6 +4,8 @@ class PortfoliosController < ApplicationController
   #extends and implements specific layout page called portfolio.html.erb
   layout "portfolio"
 
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
 	def index
 		@portfolio_items= Portfolio.all
 	end
