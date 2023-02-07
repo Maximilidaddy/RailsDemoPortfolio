@@ -10,28 +10,31 @@
 
     <!search engine optimization-->
     <META name="keywords" content="<%=@seo_keywords%>" />
- <! see stylesheets folder as this is what the 'blogs' link refers to-->
+
+      <! see stylesheets folder as this is what the 'blogs' link refers to-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-
-
-  </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class= "site-wrapper">
+      <div class = "site-wrapper-inner">
+        <div class = "cover-container">
+        
+          <%= render "shared/application_nav" %>
 
-    <%= render "shared/nav", location: 'top' %>
+          <%= login_helper%>
+              
+          <! code from any other page or file will slide into the yield method, allowing it to appear alongside the code being used on the entire application, it dynamically slides in code-->
+          <%= yield %>
 
-    <%= login_helper%>
-    <! code from any other page or file will slide into the yield method, allowing it to appear alongside the code being used on the entire application, it dynamically slides in code-->
-    <%= yield %>
+          <%= copyright_generator %>
 
-    <%= copyright_generator %>
-
-    <% if session[:source]%>
-   <p>Thanks for visiting me from <%= session[:source] %></p> 
+          <% if session[:source]%>
+          p>Thanks for visiting me from <%= session[:source] %></p>     
+        </div>
+      </div>
+    </div>
     <% end %>
   </body>
 </html>
